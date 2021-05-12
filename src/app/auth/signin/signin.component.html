@@ -1,0 +1,22 @@
+<ngx-spinner></ngx-spinner>
+<div class="login">
+    <div class="login-screen">
+        <div class="app-title">
+            <h1>SignIn</h1>
+        </div>
+        <form [formGroup]="signinForm" (ngSubmit)="signin()">
+          <div class="login-form">
+            <div class="control-group">
+              <input formControlName="email" type="text" class="login-field" value="" placeholder="9004313006" id="login-name">
+              <span class="help-block" *ngIf="emailError" style="color: red;">{{emailError}}</span>
+            </div>
+            <div class="control-group">
+              <input formControlName="password" type="password" class="login-field" value="" placeholder="******" id="login-pass">
+              <span class="help-block" *ngIf="passwordError" style="color: red;">{{passwordError}}</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Submit</button>
+            <a class="login-link" [routerLink]="['/auth/signup']" >SignUp</a>
+        </div>
+        </form>
+    </div>
+  </div>
